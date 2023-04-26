@@ -1,0 +1,101 @@
+$color-primary: #1A1A24;
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;
+    }
+}
+
+body {
+  background-color: #1d1623
+}
+
+.rootLay{
+    margin: 5rem;
+    color: white;
+    display: flex;
+    background-color: #111117;
+    border-radius: 3rem 3rem 3rem 3rem;
+    height: 100vh;
+    position: relative;
+}
+//-------------------------------- SIDEBAR -------------------------
+
+.sidebar{
+    background-color: $color-primary;
+    border-radius: 3rem 0rem 0rem 3rem;
+    width: 10rem;
+    height: 100%;
+
+
+    &__listItems{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        margin-top: 5rem;
+
+        li{
+            text-align: center;
+            align-self:stretch;
+            transition: .2s all;
+            position: relative;
+            cursor: pointer;
+
+            &::before{
+                content: '';
+                background-color: #7F65FD;
+                width: 4px;
+                position: absolute;
+                height: 0%;
+                top: 0px;
+                left: 0;
+                transition: .5s all;
+            }
+
+            &:hover::before{
+                height: 100%;
+              
+            }
+        }
+
+        img{
+            width: 50px;
+            align-self: center;
+        }
+    }
+}
+
+
+// ------------------------------- HOME---------------------------
+
+    .homeText{
+        font-size: 6rem;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-45%, -45%);
+    }
